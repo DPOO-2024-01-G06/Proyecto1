@@ -1,11 +1,11 @@
 package galeria.structurer_inventario;
 
-import Inventario.Pieza;
+import galeria.structurer_usuarios.Externo;
 
 public class Venta {
 	private double precio;
 	private boolean aceptada;
-	//private externo externo;
+	private Externo externo;
 	private boolean facturada;
 	private Pieza pieza;
 	

@@ -1,4 +1,4 @@
-package Inventario;
+package galeria.structurer_inventario;
 import java.util.HashMap;
 import java.util.Map;
 

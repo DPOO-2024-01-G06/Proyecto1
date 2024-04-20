@@ -1,4 +1,4 @@
-package Inventario;
+package galeria.structurer_inventario;
 
 public class Pintura extends Pieza {
 	private double ancho;

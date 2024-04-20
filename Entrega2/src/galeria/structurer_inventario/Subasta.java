@@ -1,7 +1,6 @@
 package galeria.structurer_inventario;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import Inventario.Subasta;
 
 public class Subasta {
     private double valorMinimo;

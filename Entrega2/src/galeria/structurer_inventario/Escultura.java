@@ -1,4 +1,5 @@
-package Inventario;
+
+package galeria.structurer_inventario;
 
 public class Escultura extends Pieza{
 	private double alto;
