@@ -1,18 +1,24 @@
 package galeria.controller_galeria;
 
+import galeria.structurer_usuarios.Usuario;
+
 public class Coordinador_Sesion {
-	private String usuario;
+	private String nombreUsuario;
 	private String contrasena;
 	private Controlador_Internos controladorInternos;
 	private Controlador_Externos controladorExternos;
+	private Usuario usuario;
 	
-		
-	public Coordinador_Sesion(){ 
-		controladorInternos = new Controlador_Internos();
-		controladorExternos = new Controlador_Externos();
+	
+	public Coordinador_Sesion() {
 	}
-	public void iniciarSesion(String usuarioEntregado, String contrasenaEntregada) {
-		this.usuario = usuarioEntregado;
+	public void iniciarSesion(String nombreUsuario, String contrasenaEntregada) {
+		this.nombreUsuario = nombreUsuario;
 		this.contrasena = contrasenaEntregada;
-	}	
+		
+	}
+	public void crearNuevoExterno(String usuario, String contrasena) {
+		//TODO
+	}
+	
 }

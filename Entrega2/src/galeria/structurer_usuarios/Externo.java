@@ -1,5 +1,5 @@
 package galeria.structurer_usuarios;
 
-public class Usuario {
-	
+public class Externo {
+
 }
