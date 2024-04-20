@@ -1,5 +1,6 @@
 package galeria.controller_galeria;
 
+import galeria.Galeria;
 import galeria.structurer_usuarios.Usuario;
 
 public class Coordinador_Sesion {
@@ -8,6 +9,7 @@ public class Coordinador_Sesion {
 	private Controlador_Internos controladorInternos;
 	private Controlador_Externos controladorExternos;
 	private Usuario usuario;
+	private Galeria galeria;
 	
 	
 	public Coordinador_Sesion() {
@@ -20,5 +22,7 @@ public class Coordinador_Sesion {
 	public void crearNuevoExterno(String usuario, String contrasena) {
 		//TODO
 	}
+	
+	
 	
 }
