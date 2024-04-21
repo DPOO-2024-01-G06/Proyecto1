@@ -7,22 +7,18 @@ import galeria.structurer_inventario.Pieza;
 import galeria.structurer_inventario.Venta;
 
 public class Administrador extends Interno {
-    private List<Venta> comprasPorAceptar;
     private List<Pieza> piezasPorAgregar;
     private List<Externo> pendientesVerificar;	
+    private List<Venta> pendientesAceptar;
 	
     public Administrador(String nombreUsuario, String contraseña, String nombre, String celular, String correo,
-			List<Venta> comprasPorAceptar, List<Pieza> piezasPorAgregar, List<Externo> pendientesVerificar) {
+			List<Venta> pendientesAceptar, List<Pieza> piezasPorAgregar, List<Externo> pendientesVerificar) {
 		super(nombreUsuario, contraseña, nombre, celular, correo);
-		this.comprasPorAceptar = comprasPorAceptar;
 		this.piezasPorAgregar = piezasPorAgregar;
 		this.pendientesVerificar = pendientesVerificar;
+		this.pendientesAceptar = pendientesAceptar;
 	}
 	
-    public List<Venta> getComprasPorAceptar(){
-        return comprasPorAceptar;
-    }
-
     public List<Pieza> getPiezasPorAgregar() {
         return piezasPorAgregar;
     }
@@ -31,5 +27,12 @@ public class Administrador extends Interno {
 	public String getTipoInterno() {
 		return "administrador";
 	}
+	public List<Venta> getPendientesAceptar(){
+		return pendientesAceptar;
+	}
+	public List<Externo> getPendientesVerificar(){
+		return pendientesVerificar;
+	}
+	
 }
 

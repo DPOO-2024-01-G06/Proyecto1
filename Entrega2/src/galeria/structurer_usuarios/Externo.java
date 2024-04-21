@@ -4,29 +4,31 @@ import java.util.List;
 
 
 public class Externo extends Usuario {
-    private List<Comprador> compradores;
-    private List<Propietario> propietarios;
+    private Comprador comprador;
+    private Propietario propietario;
     
-    public Externo (String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
+    public Externo (String nombreUsuario, String contraseña, String nombre, String celular, String correo, Comprador comprador, Propietario propietario) {
 		super(nombreUsuario, contraseña, nombre, celular, correo);
+		this.propietario = propietario;
+		this.comprador = comprador;
     }
     
     public Comprador crearComprador(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
-        Comprador comprador = new Comprador(nombreUsuario, contraseña, nombre, celular, correo);
+        Comprador comprador = new Comprador();
         return comprador;
     }
     
     public Propietario crearPropietario(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
-        Propietario propietario = new Propietario(nombreUsuario, contraseña, nombre, celular, correo);
+        Propietario propietario = new Propietario();
         return propietario;
     }
     
-    public List<Comprador> getCompradores() {
-        return this.compradores;
+    public Comprador getCompradores() {
+        return comprador;
     }
 
-    public List<Propietario> getPropietarios() {
-        return this.propietarios;
+    public Propietario getPropietarios() {
+        return propietario;
     }
 
 	@Override

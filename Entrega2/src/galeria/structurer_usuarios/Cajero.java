@@ -24,4 +24,7 @@ public class Cajero extends Interno {
 	public String getTipoInterno() {
 		return "cajero";
 	}
+	public List<Venta> getVentasPendientes(){
+		return ventasPendientes;
+	}
 }

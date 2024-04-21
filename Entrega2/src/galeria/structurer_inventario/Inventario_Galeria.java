@@ -86,6 +86,17 @@ public class Inventario_Galeria {
             subastasPasadas.put(hashCode, subasta);
             Pieza pieza = inventario.get(hashCode);
             pieza.setBloqueado(true);
-        }
+        } 
     }
+    
+    public Map<Integer, Pieza> getInventario(){
+    	return inventario;
+    }
+    public Map<Integer, Venta> getVentasPendientes(){
+    	return ventasPendientes;
+    }
+    public Map<Integer, Venta> getVentasAceptadas(){
+    	return ventasAceptadas;
+    }
+    
 }

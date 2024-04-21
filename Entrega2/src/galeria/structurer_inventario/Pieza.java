@@ -1,4 +1,4 @@
-package galeria.structurer_inventario;
+  package galeria.structurer_inventario;
 
 import java.util.Objects;
 

@@ -10,7 +10,7 @@ public class Propietario {
 	public List<Pieza> piezasPropiedad;
 	public List<Pieza> piezasCedidas;
 	
-	public Propietario(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
+	public Propietario() {
         this.piezasPropiedad = new ArrayList<>();
         this.piezasCedidas = new ArrayList<>();
     }

@@ -9,11 +9,12 @@ public class Venta {
 	private boolean facturada;
 	private Pieza pieza;
 	
-	public Venta(double precio, boolean aceptada, boolean facturada) {
+	public Venta(double precio, boolean aceptada, boolean facturada, Pieza pieza) {
 		super();
 		this.precio = precio;
 		this.aceptada = aceptada;
 		this.facturada = facturada;
+		this.pieza = pieza;
 	}
 	
 	public void setAceptada(boolean aceptada){

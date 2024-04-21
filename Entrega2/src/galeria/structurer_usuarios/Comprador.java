@@ -7,13 +7,13 @@ import galeria.structurer_inventario.Subasta;
 import galeria.structurer_inventario.Venta;
 
 public class Comprador {
-	public float valorMaximo = 0;
-	public boolean verificado = false;
-	public float salario = 0;
+	public float valorMaximo;
+	public boolean verificado;
+	public float salario;
 	public List<Venta> compras;
 	public List<Subasta> subastasGanadas;
 	
-	public Comprador(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
+	public Comprador() {
 		this.valorMaximo = 0;
         this.verificado = false;
         this.salario = 0;
@@ -44,7 +44,7 @@ public class Comprador {
         this.subastasGanadas.add(subasta);
     }
 
-	public void agragarCompras(Venta venta) {
+	public void agregarCompras(Venta venta) {
 		this.compras.add(venta);
 	}
 
