@@ -1,14 +1,33 @@
 package galeria.structurer_inventario;
 
+import java.util.Objects;
+
+import structurer_inventario.Pieza;
+
 public class Pieza {
-	protected String titulo;
-	protected int anio;
-	protected String lugarCreacion;
-	protected boolean electricidad;
+	@Override
+	public int hashCode() {
+		return Objects.hash(titulo, autor);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pieza other = (Pieza) obj;
+		return Objects.equals(titulo, other.titulo) && Objects.equals(autor, other.autor);
+	}
+	protected final String titulo;
+	protected final int anio;
+	protected final String lugarCreacion;
+	protected final boolean electricidad;
 	protected boolean exhibicion;
 	protected String tiempoDisponible;
 	protected boolean bloqueado;
-	protected String autor;
+	protected final String autor;
 	//private externo externo;
 
 	public Pieza(String titulo, int anio, String lugarCreacion, boolean electricidad,String tiempoDisponible, String autor) {
@@ -30,6 +49,9 @@ public class Pieza {
 	
 		public String getTitulo() {
 			return titulo;
+		}
+		public String getAutor() {
+			return autor;
 		}
 		public boolean isExhibicion() {
 			return exhibicion;
