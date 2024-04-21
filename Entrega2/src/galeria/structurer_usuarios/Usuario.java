@@ -1,4 +1,4 @@
-package Usuarios;
+package structurer_usuarios;
 
 public abstract class Usuario {
 	protected String nombreUsuario;
@@ -35,5 +35,6 @@ public abstract class Usuario {
     public String getCorreo() {
         return correo;
     }
+
     
 }

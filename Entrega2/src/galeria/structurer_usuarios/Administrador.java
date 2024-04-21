@@ -1,33 +1,34 @@
-package Internos;
+package structurer_usuarios;
 
-import Usuarios.Internos;
-import Externos.Comprador;
-import Externos.Propietario;
-//importar clase de piezas
+import java.util.ArrayList;
+import java.util.List;
+
+import Externos;
+import Usuarios_Galeria;
+import structurer_inventario.Venta;
+import structurer_inventario.Pieza;
 
 public class Administrador extends Internos {
-	public static String tipoInterno = "administrador";
+	public final String TIPOINTERNO = "administrador";
+    public list<venta> comprasPorAceptar;
+    public list<pieza> piezasPorAgregar
 	
 	public Administrador(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
         super(nombreUsuario, contraseña, nombre, celular, correo);
+        this.comprasPorAceptar = new ArrayList<>();
+        this.piezasPorAgregar = new ArrayList<>();
+    }
+
+    public void agragarExterno (Externo externo){
+        usuariosGaleria.agregarExterno(externo);
     }
 	
-	public void verificarComprador(Comprador comprador) {
-		comprador.setVerificado(true);
-	}
-	
-	public void cambiarValorMaximo(Comprador comprador, float nuevoValorMaximo) {
-	    comprador.setValorMaximo(nuevoValorMaximo);
-	}
-	
-	public void devolverPieza(Pieza pieza, Propietario propietario) {
-        // agregar quitar la pieza de la lista de la galeria
-        propietario.getPiezasPropiedad().add(pieza);
-        propietario.getPiezasCedidas().remove(pieza);
+    public list<venta> getComprasPorAceptar(){
+        return comprasPorAceptar;
     }
-	
-	public void registrarPieza(Pieza pieza, Propietario propietario) {
-		//agragar pieza a la lista de piezas de la galeria
-	}
+
+    public list<pieza> getPiezasPorAgregar() {
+        return piezasPorAgregar
+    }
 }
 

@@ -1,13 +1,13 @@
-package Externos;
+package structurer_usuarios;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Usuarios.Externos;
-// importar la clase de ventas y de subastas
+import Externos;
+import structurer_inventario.Venta;
+import structurer_inventario.Subasta;
 
 public class Comprador {
-	public Externos externo;
 	public float valorMaximo = 0;
 	public boolean verificado = false;
 	public float salario = 0;
@@ -23,20 +23,33 @@ public class Comprador {
 	}
 	
 	
-	public void setVerificado(boolean verificado) {
-	    this.verificado = verificado;
-	}
-	
 	public void setValorMaximo(float valorMaximo) {
         this.valorMaximo = valorMaximo;
     }
 
-    public void agregarCompra(Venta venta) {
-        this.compras.add(venta);
+	public void setVerificado(boolean verificado) {
+	    this.verificado = verificado;
+	}
+
+	public float getSalario() {
+		return salario;
+	}
+
+    public void getCompras() {
+        return this.compras;
+    }
+
+	public void getSubastasGanadas() {
+        return this.subastasGanadas;
     }
 
     public void agregarSubasta(Subasta subasta) {
         this.subastasGanadas.add(subasta);
     }
+
+	public void agragarCompras(Venta venta) {
+		this.compras.add(venta);
+	}
+
 		
 }

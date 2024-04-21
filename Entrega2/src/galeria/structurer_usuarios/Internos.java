@@ -1,7 +1,7 @@
-package Usuarios;
+package structurer_usuarios;
 
 public abstract class Internos extends Usuario {
-	public static String tipoUsuario = "interno";
+	public final String TIPOUSUARIO = "interno";
 	
 	public Internos (String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
 		super(nombreUsuario, contraseña, nombre, celular, correo);

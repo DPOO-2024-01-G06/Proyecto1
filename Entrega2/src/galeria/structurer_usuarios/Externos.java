@@ -1,12 +1,12 @@
-package Usuarios;
+package structurer_usuarios;
 
 import java.util.List;
 
-import Externos.Comprador;
-import Externos.Propietario;
+import Comprador;
+import Propietario;
 
 public class Externos extends Usuario {
-    public static String tipoUsuario = "externo";
+    public final String TIPOUSUARIO = "externo";
     public List<Comprador> compradores;
     public List<Propietario> propietarios;
     

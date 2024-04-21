@@ -1,9 +1,10 @@
-package Externos;
+package structurer_usuarios;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import Usuarios.Externos;
-//importar la clase de piezas
+import Externos;
+import structurer_inventario.Pieza;
 
 public class Propietario {
 	public list<pieza> piezasPropiedad;
