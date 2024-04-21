@@ -1,34 +1,35 @@
-package structurer_usuarios;
+package galeria.structurer_usuarios;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Externos;
-import Usuarios_Galeria;
-import structurer_inventario.Venta;
-import structurer_inventario.Pieza;
+import galeria.structurer_inventario.Pieza;
+import galeria.structurer_inventario.Venta;
 
-public class Administrador extends Internos {
-	public final String TIPOINTERNO = "administrador";
-    public list<venta> comprasPorAceptar;
-    public list<pieza> piezasPorAgregar
+public class Administrador extends Interno {
+    private List<Venta> comprasPorAceptar;
+    private List<Pieza> piezasPorAgregar;
+    private List<Externo> pendientesVerificar;	
 	
-	public Administrador(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
-        super(nombreUsuario, contraseña, nombre, celular, correo);
-        this.comprasPorAceptar = new ArrayList<>();
-        this.piezasPorAgregar = new ArrayList<>();
-    }
-
-    public void agragarExterno (Externo externo){
-        usuariosGaleria.agregarExterno(externo);
-    }
+    public Administrador(String nombreUsuario, String contraseña, String nombre, String celular, String correo,
+			List<Venta> comprasPorAceptar, List<Pieza> piezasPorAgregar, List<Externo> pendientesVerificar) {
+		super(nombreUsuario, contraseña, nombre, celular, correo);
+		this.comprasPorAceptar = comprasPorAceptar;
+		this.piezasPorAgregar = piezasPorAgregar;
+		this.pendientesVerificar = pendientesVerificar;
+	}
 	
-    public list<venta> getComprasPorAceptar(){
+    public List<Venta> getComprasPorAceptar(){
         return comprasPorAceptar;
     }
 
-    public list<pieza> getPiezasPorAgregar() {
-        return piezasPorAgregar
+    public List<Pieza> getPiezasPorAgregar() {
+        return piezasPorAgregar;
     }
+
+	@Override
+	public String getTipoInterno() {
+		return "administrador";
+	}
 }
 

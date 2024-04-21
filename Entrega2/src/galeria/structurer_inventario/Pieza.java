@@ -2,8 +2,6 @@ package galeria.structurer_inventario;
 
 import java.util.Objects;
 
-import structurer_inventario.Pieza;
-
 public class Pieza {
 	@Override
 	public int hashCode() {

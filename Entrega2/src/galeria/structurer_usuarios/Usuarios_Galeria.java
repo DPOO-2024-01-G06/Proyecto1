@@ -1,31 +1,27 @@
-package structurer_usuarios;
+package galeria.structurer_usuarios;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Administrador;
-import Operador;
-import Externos;
-import Cajero;
 
 public class Usuarios_Galeria {
     private Administrador administrador;
     private Cajero cajero;
     private Operador operador;
-    private List<Externos> externos;
+    private List<Externo> externos;
 
-    public Usuarios_Galeria() {
-        this.administrador = Administrador.Administrador (nombreUsuario, contraseña, nombre, celular, correo);
-        this.cajero = Cajero.Cajero (nombreUsuario, contraseña, nombre, celular, correo);
-        this.operador = Operador.Operador (nombreUsuario, contraseña, nombre, celular, correo);
+    public Usuarios_Galeria(Administrador administrador, Cajero cajero, Operador operador){
+        this.administrador = administrador;
+        this.cajero =  cajero;
+        this.operador = operador;
         this.externos = new ArrayList<>();
     }
 
-    public void agregarExterno(Externos usuario) {
-        this.externos.add(usuario);
+    public void agregarExterno(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
+    	Externo externo = new Externo(nombreUsuario, contraseña, nombre, celular, correo);
+        this.externos.add(externo);
     }
 
-    public List<Externos> getExternos() {
+    public List<Externo> getExternos() {
         return externos;
     }
 
@@ -40,15 +36,4 @@ public class Usuarios_Galeria {
     public Operador getOperador() {
         return operador;
     }
-
-    public Administrador setAdministrador (Administrador administrador) {
-        this.Administrador = administrador;
-    }
-
-    public Cajero setCajero (Cajero cajero) {
-        this.Cajero = cajero;
-    }
-
-    public Operador setOperador (Operador operador)
-        this.Operador = operador;
 }

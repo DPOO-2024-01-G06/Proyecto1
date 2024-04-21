@@ -1,18 +1,17 @@
-package structurer_usuarios;
+package galeria.structurer_usuarios;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Externos;
-import structurer_inventario.Venta;
-import structurer_inventario.Subasta;
+import galeria.structurer_inventario.Subasta;
+import galeria.structurer_inventario.Venta;
 
 public class Comprador {
 	public float valorMaximo = 0;
 	public boolean verificado = false;
 	public float salario = 0;
-	public list<venta> compras;
-	public list<subasta> subastasGanadas;
+	public List<Venta> compras;
+	public List<Subasta> subastasGanadas;
 	
 	public Comprador(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
 		this.valorMaximo = 0;
@@ -36,11 +35,9 @@ public class Comprador {
 	}
 
     public void getCompras() {
-        return this.compras;
     }
 
 	public void getSubastasGanadas() {
-        return this.subastasGanadas;
     }
 
     public void agregarSubasta(Subasta subasta) {

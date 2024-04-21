@@ -1,4 +1,4 @@
-package structurer_inventario;
+package galeria.structurer_inventario;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -7,9 +7,13 @@ public class Inventario_Galeria {
     private Map<Integer, Subasta> subastasPendientes = new HashMap<>();
     private Map<Integer, Subasta> subastasPasadas = new HashMap<>();
     private Map<Integer, Venta> ventasPendientes = new HashMap<>();
-    private Map<Integer, Venta> ventasAceptadas = new HashMap<>();
-    private Map<Integer, Pieza> inventario = new HashMap<>();
-
+    private Map<Integer, Venta> ventasAceptadas;
+    private Map<Integer, Pieza> inventario; 
+    
+    
+    public Inventario_Galeria() {
+    	
+    }
     //ventas
     //se debe crear la venta antes de ingresar
     // ej el admin agrega la pieza y luego le pregunta los datos de venta

@@ -1,16 +1,16 @@
-package structurer_usuarios;
+package galeria.structurer_usuarios;
 
 public abstract class Usuario {
 	protected String nombreUsuario;
-    protected String contraseña;
+    protected String contrasena;
     protected String nombre;
     protected String celular;
     protected String correo;
     
     
-    public Usuario (String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
+    public Usuario (String nombreUsuario, String contrasena, String nombre, String celular, String correo) {
         this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.nombre = nombre;
         this.celular = celular;
         this.correo = correo;
@@ -20,8 +20,8 @@ public abstract class Usuario {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     
     public String getNombre() {
@@ -35,6 +35,13 @@ public abstract class Usuario {
     public String getCorreo() {
         return correo;
     }
+    public String getNombreUsuario() {
+    	return nombreUsuario;
+    }
+    public String getContrasena() {
+    	return contrasena;
+    }
+    public abstract String getTipoUsuario();
 
     
 }
