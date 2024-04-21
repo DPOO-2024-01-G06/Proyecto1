@@ -4,17 +4,22 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Inventario_Galeria {
-    private Map<Integer, Subasta> subastasPendientes = new HashMap<>();
-    private Map<Integer, Subasta> subastasPasadas = new HashMap<>();
-    private Map<Integer, Venta> ventasPendientes = new HashMap<>();
+    private Map<Integer, Subasta> subastasPendientes;
+    private Map<Integer, Subasta> subastasPasadas;
+    private Map<Integer, Venta> ventasPendientes;
     private Map<Integer, Venta> ventasAceptadas;
     private Map<Integer, Pieza> inventario; 
-    
-    
-    public Inventario_Galeria() {
-    	
-    }
-    //ventas
+     
+    public Inventario_Galeria(Map<Integer, Subasta> subastasPendientes, Map<Integer, Subasta> subastasPasadas,
+			Map<Integer, Venta> ventasPendientes, Map<Integer, Venta> ventasAceptadas, Map<Integer, Pieza> inventario) {
+		this.subastasPendientes = subastasPendientes;
+		this.subastasPasadas = subastasPasadas;
+		this.ventasPendientes = ventasPendientes;
+		this.ventasAceptadas = ventasAceptadas;
+		this.inventario = inventario;
+	}
+
+	//ventas
     //se debe crear la venta antes de ingresar
     // ej el admin agrega la pieza y luego le pregunta los datos de venta
     //al crear una obra por defecto debe entrar a esta lista
@@ -83,5 +88,4 @@ public class Inventario_Galeria {
             pieza.setBloqueado(true);
         }
     }
-    Inventario_Galeria inventario_Galeria = new Inventario_Galeria();
 }
