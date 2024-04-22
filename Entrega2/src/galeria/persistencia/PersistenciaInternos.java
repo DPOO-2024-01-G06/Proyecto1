@@ -1,4 +1,4 @@
-package persistencia;
+package galeria.persistencia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class PersistenciaInternos {
                          administrador.getNombre() + ";" +
                          administrador.getCorreo() + ";" +
                          administrador.getCelular() + "\n");
-            for (Venta venta : administrador.getComprasPorAceptar()) {
+            for (Venta venta : administrador.getPendientesAceptar()) {
                 writer.write(venta.getPrecio() + "," + 
                         venta.isAceptada() + "," + 
                         venta.isFacturada() + "," + 
@@ -86,7 +86,8 @@ public class PersistenciaInternos {
                          operador.getCorreo() + ";" +
                          operador.getCelular() + "\n");
             
-            for (Subasta subasta : operador.getOfertasPendientes()) {
+            for (Oferta oferta : operador.getOfertasPendientes()) {
+            	Subasta subasta = oferta.getSubasta();
                 writer.write(subasta.getValorMinimo() + "," + 
                         subasta.getValorInicial() + "," + 
                         subasta.getOfertaMaxima() + "," + 
@@ -108,7 +109,7 @@ public class PersistenciaInternos {
             String correo = campos[3];
             String celular = campos[4];
 
-            Administrador administrador = new Administrador(nombreUsuario, contrasena, nombre, correo, celular, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+            //Administrador administrador = new Administrador(nombreUsuario, contrasena, nombre, correo, celular, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
             String ventaLine;
             while ((ventaLine = reader.readLine())!= null) {
@@ -118,10 +119,10 @@ public class PersistenciaInternos {
                 boolean facturada = Boolean.parseBoolean(ventaCampos[2]);
                 String tituloPieza = ventaCampos[3];
                 String autorPieza = ventaCampos[4];
-                Pieza pieza = new Pieza(tituloPieza, 0, "", false, "", autorPieza);
-                Venta venta = new Venta(precio, aceptada, facturada);
-                venta.setPieza(pieza);
-                administrador.getComprasPorAceptar().add(venta);
+                Pieza pieza = new Pieza(tituloPieza, 0, "", false, "", autorPieza, null);
+                Venta venta = new Venta(precio, aceptada, facturada, pieza);
+                //venta.setPieza(pieza);
+                //administrador.getComprasPorAceptar().add(venta);
             }
 
             String piezaLine;
@@ -131,9 +132,9 @@ public class PersistenciaInternos {
                 String autor = piezaCampos[1];
                 boolean exhibicion = Boolean.parseBoolean(piezaCampos[2]);
                 String tiempoDisponible = piezaCampos[3];
-                Pieza pieza = new Pieza(titulo, 0, "", false, tiempoDisponible, autor);
-                pieza.setExhibicion(exhibicion);
-                administrador.getPiezasPorAgregar().add(pieza);
+                //Pieza pieza = new Pieza(titulo, 0, "", false, tiempoDisponible, autor);
+                //pieza.setExhibicion(exhibicion);
+                //administrador.getPiezasPorAgregar().add(pieza);
             }
 
             String externoLine;
@@ -144,11 +145,12 @@ public class PersistenciaInternos {
                 String nombreExterno = externoCampos[2];
                 String correoExterno = externoCampos[3];
                 String celularExterno = externoCampos[4];
-                Externo externo = new Externo(nombreUsuarioExterno, contrasenaExterno, nombreExterno, correoExterno, celularExterno);
-                administrador.getPendientesVerificar().add(externo);
+                //Externo externo = new Externo(nombreUsuarioExterno, contrasenaExterno, nombreExterno, correoExterno, celularExterno);
+                //administrador.getPendientesVerificar().add(externo);
             }
 
-            return administrador;
+            //return administrador;
+            return null;
         } catch (IOException e) {
             System.out.println("No fue posible cargar la informacion del Administrador");
             return null;
@@ -181,9 +183,9 @@ public class PersistenciaInternos {
                 boolean electricidad = Boolean.parseBoolean(piezaCampos[3]);
                 String tiempoDisponible = piezaCampos[4];
                 String autor = piezaCampos[5];
-                Pieza pieza = new Pieza(titulo, anio, lugarCreacion, electricidad, tiempoDisponible, autor);
-                Venta venta = new Venta(precio, aceptada, facturada);
-                cajero.getVentasPendientes().add(venta);
+                //Pieza pieza = new Pieza(titulo, anio, lugarCreacion, electricidad, tiempoDisponible, autor);
+                //Venta venta = new Venta(precio, aceptada, facturada);
+                //cajero.getVentasPendientes().add(venta);
             }
 
             return cajero;
@@ -204,7 +206,7 @@ public class PersistenciaInternos {
             String correo = campos[3];
             String celular = campos[4];
 
-            Operador operador = new Operador(nombreUsuario, contrasena, nombre, correo, celular);
+            //Operador operador = new Operador(nombreUsuario, contrasena, nombre, correo, celular);
 
             String subastaLine;
             while ((subastaLine = reader.readLine())!= null) {
@@ -220,14 +222,15 @@ public class PersistenciaInternos {
                     String[] ofertaDatos = ofertaCampo.split(",");
                     double valor = Double.parseDouble(ofertaDatos[1]);
                     String metodoPago = ofertaDatos[0];
-                    Oferta oferta = new Oferta(valor, metodoPago);
-                    ofertas.add(oferta);
+                   // Oferta oferta = new Oferta(valor, metodoPago);
+                   // ofertas.add(oferta);
                 }
-                Subasta subasta = new Subasta(valorMinimo, valorInicial, limiteTiempo, oferta);
-                operador.getOfertasPendientes().add(oferta);
+                //Subasta subasta = new Subasta(valorMinimo, valorInicial, limiteTiempo, oferta);
+                //operador.getOfertasPendientes().add(oferta);
             }
 
-            return operador;
+            //return operador;
+            return null;
         } catch (IOException e) {
             System.out.println("No fue posible cargar la informacion del Operador");
             return null;

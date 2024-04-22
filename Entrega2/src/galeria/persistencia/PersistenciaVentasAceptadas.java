@@ -1,4 +1,10 @@
-package persistencia;
+package galeria.persistencia;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import galeria.structurer_inventario.Venta;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,6 +16,7 @@ import java.util.Map;
 public class PersistenciaVentasAceptadas {
 
 	private String archivoSubastasPasadas;
+	private String archivoVentasAceptadas;
 
 	public PersistenciaVentasAceptadas(String archivoVentasAceptadas) {
 		this.archivoVentasAceptadas = archivoVentasAceptadas;

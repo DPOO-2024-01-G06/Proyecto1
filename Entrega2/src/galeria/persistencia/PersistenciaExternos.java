@@ -1,4 +1,4 @@
-package persistencia;
+package galeria.persistencia;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,7 +35,7 @@ public class PersistenciaExternos {
             String linea = reader.readLine();
             if (linea != null) {
                 String[] campos = linea.split(";");
-                externo = new Externo(campos[0], campos[1], campos[2], campos[3], campos[4]);
+ //               externo = new Externo(campos[0], campos[1], campos[2], campos[3], campos[4]);
             }
         } catch (IOException e) {
             System.out.println("No fue posible cargar la informacion del Externo");
