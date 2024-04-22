@@ -17,7 +17,7 @@ public class Usuarios_Galeria {
     }
 
     public void agregarExterno(String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
-    	Externo externo = new Externo(nombreUsuario, contraseña, nombre, celular, correo);
+    	Externo externo = new Externo(nombreUsuario, contraseña, nombre, celular, correo, null, null);
         this.externos.add(externo);
     }
 

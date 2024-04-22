@@ -6,7 +6,7 @@ import java.util.List;
 import galeria.structurer_inventario.Venta;
 
 public class Cajero extends Interno {
-	public List<Venta> ventasPendientes;
+	private List<Venta> ventasPendientes;
 	
 	public Cajero (String nombreUsuario, String contraseña, String nombre, String celular, String correo) {
         super(nombreUsuario, contraseña, nombre, celular, correo);

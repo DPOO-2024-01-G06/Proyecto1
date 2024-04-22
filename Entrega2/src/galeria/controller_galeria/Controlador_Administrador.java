@@ -19,11 +19,6 @@ public class Controlador_Administrador {
 		this.galeria = galeria;
 		coordinadorUsuarios = new Coordinador_Usuarios(galeria);
 	}
-	public void ingresarPiezaCedida(int indice, double precio) {
-		Pieza pieza = administrador.getPiezasPorAgregar().get(indice);
-		Venta venta = new Venta(precio, false, false, pieza);
-		galeria.getInventarioGaleria().agregarPieza(venta);
-	}
 	public Map<Integer, Pieza> getInventario(){
 		return galeria.getInventarioGaleria().getInventario();
 	}
@@ -33,17 +28,41 @@ public class Controlador_Administrador {
 	public List<Externo> getUsuariosPendientes(){
 		return administrador.getPendientesVerificar();
 	}
-	public void aceptarVenta(int indice) {
+	public List<Externo> getSuperaronLimite(){
+		return administrador.getSuperaronLimite();
+	}
+	public void confirmarVenta(int indice, boolean aceptada) {
 		Venta venta = administrador.getPendientesAceptar().get(indice);
 		administrador.getPendientesAceptar().remove(indice);
-		venta.setAceptada(true);
+		galeria.getInventarioGaleria().venderPieza(venta, aceptada);
+		if(aceptada) {
 		coordinadorUsuarios.aceptarVenta(venta);
+		}
 	}
-	
 	public void verificarExterno(int indice) {
 		Externo externo = administrador.getPendientesVerificar().get(indice);
-		externo
+		externo.getComprador().setVerificado(true);
+		administrador.getPendientesVerificar().remove(indice);
 	}
 	
-
+	public void invalidarExterno(int indice) {
+		Externo externo = administrador.getPendientesVerificar().get(indice);
+		externo.getComprador().setVerificado(false);
+		administrador.getPendientesVerificar().remove(indice);
+	}
+	public void ingresarPiezaCedida(int indice, double precio) {
+		Pieza pieza = administrador.getPiezasPorAgregar().get(indice);
+		Venta venta = new Venta(precio, false, false, pieza);
+		galeria.getInventarioGaleria().agregarPieza(venta);
+	}
+	public void devolverPieza(int hashCode) {
+		Pieza pieza = galeria.getInventarioGaleria().getInventario().get(hashCode);
+		galeria.getInventarioGaleria().getInventario().remove(pieza);
+		coordinadorUsuarios.devolverPieza(pieza);
+	}
+	public void reestablecerMaximo(int indice, float nLimite) {
+		Externo externo = administrador.getSuperaronLimite().get(indice);
+		coordinadorUsuarios.reestablecerMaximo(externo, nLimite);
+	}
+	
 }

@@ -7,21 +7,22 @@ import galeria.structurer_inventario.Subasta;
 import galeria.structurer_inventario.Venta;
 
 public class Comprador {
-	public float valorMaximo;
-	public boolean verificado;
-	public float salario;
-	public List<Venta> compras;
-	public List<Subasta> subastasGanadas;
+	private float valorMaximo;
+	private boolean verificado;
+	private float salario;
+	private List<Venta> ventas;
+	private List<Subasta> subastasGanadas;
 	
-	public Comprador() {
-		this.valorMaximo = 0;
-        this.verificado = false;
-        this.salario = 0;
-        this.compras = new ArrayList<>();
-        this.subastasGanadas = new ArrayList<>();
+	
+	public Comprador(float valorMaximo, boolean verificado, float salario, List<Venta> compras,
+			List<Subasta> subastasGanadas) {
+		this.valorMaximo = valorMaximo;
+		this.verificado = verificado;
+		this.salario = salario;
+		this.ventas = compras;
+		this.subastasGanadas = subastasGanadas;
 	}
-	
-	
+
 	public void setValorMaximo(float valorMaximo) {
         this.valorMaximo = valorMaximo;
     }
@@ -34,10 +35,12 @@ public class Comprador {
 		return salario;
 	}
 
-    public void getCompras() {
+    public List<Venta> getVentas() {
+    	return ventas;
     }
 
-	public void getSubastasGanadas() {
+	public List<Subasta> getSubastasGanadas() {
+		return subastasGanadas;
     }
 
     public void agregarSubasta(Subasta subasta) {
@@ -45,7 +48,13 @@ public class Comprador {
     }
 
 	public void agregarCompras(Venta venta) {
-		this.compras.add(venta);
+		this.ventas.add(venta);
+	}
+	public boolean getVerficiado() {
+		return verificado;
+	}
+	public float getValorMaximo() {
+		return valorMaximo;
 	}
 
 		

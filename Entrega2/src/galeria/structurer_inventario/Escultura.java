@@ -1,6 +1,8 @@
 
 package galeria.structurer_inventario;
 
+import galeria.structurer_usuarios.Externo;
+
 public class Escultura extends Pieza{
 	private double alto;
 	private double ancho;
@@ -11,8 +13,8 @@ public class Escultura extends Pieza{
 	
 	public Escultura(String titulo, int anio, String lugarCreacion, boolean electricidad, String tiempoDisponible,
 			String autor, double alto, double ancho, double profundidad, double peso, String material,
-			String instalacion) {
-		super(titulo, anio, lugarCreacion, electricidad, tiempoDisponible, autor);
+			String instalacion, Externo externo) {
+		super(titulo, anio, lugarCreacion, electricidad, tiempoDisponible, autor, externo);
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;

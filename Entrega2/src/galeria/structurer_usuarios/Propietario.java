@@ -7,15 +7,17 @@ import galeria.structurer_inventario.Pieza;
 
 
 public class Propietario {
-	public List<Pieza> piezasPropiedad;
-	public List<Pieza> piezasCedidas;
+	private List<Pieza> piezasPropiedad;
+	private List<Pieza> piezasCedidas;
 	
-	public Propietario() {
-        this.piezasPropiedad = new ArrayList<>();
-        this.piezasCedidas = new ArrayList<>();
-    }
+	
 
-    public List<Pieza> getPiezasPropiedad() {
+    public Propietario(List<Pieza> piezasPropiedad, List<Pieza> piezasCedidas) {
+		this.piezasPropiedad = piezasPropiedad;
+		this.piezasCedidas = piezasCedidas;
+	}
+
+	public List<Pieza> getPiezasPropiedad() {
         return piezasPropiedad;
     }
 

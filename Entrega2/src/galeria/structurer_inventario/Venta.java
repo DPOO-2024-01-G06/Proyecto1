@@ -10,7 +10,6 @@ public class Venta {
 	private Pieza pieza;
 	
 	public Venta(double precio, boolean aceptada, boolean facturada, Pieza pieza) {
-		super();
 		this.precio = precio;
 		this.aceptada = aceptada;
 		this.facturada = facturada;
@@ -38,6 +37,13 @@ public class Venta {
 
 	public Pieza getPieza() {
 		return pieza;
+	}
+	
+	public Externo getExterno() {
+		return externo;
+	}
+	public void setExterno(Externo externo) {
+		this.externo = externo;
 	}
 	
 }

@@ -25,7 +25,12 @@ public class Controlador_Externos {
 			controladorPropietario = new Controlador_Propietario(galeria, externo);
 			controladorActual = "Controlador_Propietario";
 		}
+	
 	}
-	
-	
+	public Controlador_Propietario getControladorPropietario(){
+		return controladorPropietario;
+	}
+	public Controlador_Comprador getControladorComprador() {
+		return controladorComprador;
+	}
 }

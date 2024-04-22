@@ -98,5 +98,8 @@ public class Inventario_Galeria {
     public Map<Integer, Venta> getVentasAceptadas(){
     	return ventasAceptadas;
     }
+    public Map<Integer, Subasta> getSubastasPendientes(){
+    	return subastasPendientes;
+    }
     
 }

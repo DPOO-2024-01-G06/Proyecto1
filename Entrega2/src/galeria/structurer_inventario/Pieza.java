@@ -2,6 +2,8 @@
 
 import java.util.Objects;
 
+import galeria.structurer_usuarios.Externo;
+
 public class Pieza {
 	@Override
 	public int hashCode() {
@@ -26,9 +28,9 @@ public class Pieza {
 	protected String tiempoDisponible;
 	protected boolean bloqueado;
 	protected final String autor;
-	//private externo externo;
+	private Externo externo;
 
-	public Pieza(String titulo, int anio, String lugarCreacion, boolean electricidad,String tiempoDisponible, String autor) {
+	public Pieza(String titulo, int anio, String lugarCreacion, boolean electricidad,String tiempoDisponible, String autor, Externo externo) {
 		this.titulo =titulo;
 		this.anio= anio;
 		this.lugarCreacion=lugarCreacion;
@@ -36,6 +38,7 @@ public class Pieza {
 		this.exhibicion = true;
 		this.tiempoDisponible = tiempoDisponible;
 		this.bloqueado = false;
+		this.externo = externo;
 		this.autor = autor;
 	}
 		public void setExhibicion(boolean exhibicion) {
@@ -60,4 +63,9 @@ public class Pieza {
 		public boolean isBloqueado() {
 			return bloqueado;
 		}
+		public Externo getExterno() {
+			return externo;
+		}
+		
+		
 }

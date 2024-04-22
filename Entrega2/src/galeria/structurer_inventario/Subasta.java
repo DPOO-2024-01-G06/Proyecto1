@@ -19,8 +19,7 @@ public class Subasta {
         this.pieza = pieza;
     }
 
-    public void agregarOferta(double valor, String metodoPago) {
-        Oferta oferta = new Oferta(valor, metodoPago);
+    public void agregarOferta(Oferta oferta) {
         if (this.ofertaMaxima == null || oferta.getValor() > this.ofertaMaxima.getValor()) {
             this.ofertaMaxima = oferta;}
         this.ofertas.add(oferta);
