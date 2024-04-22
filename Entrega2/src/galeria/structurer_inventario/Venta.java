@@ -45,5 +45,9 @@ public class Venta {
 	public void setExterno(Externo externo) {
 		this.externo = externo;
 	}
+
+	public void setPiezaz(Pieza pieza) {
+		this.pieza = pieza;
+	}
 	
 }
